@@ -1,0 +1,12 @@
+<h1>{{title}}</h1>
+<p>Here are your grocery categories:</p>
+
+{{#if categories}}
+<ul>
+{{#each categories}}
+<li><a href="{{this.url}}">{{this.title}}</a></li>
+{{/each}}
+</ul>
+{{else}}
+<p>Oops! Why don't you go make some?</p>
+{{/if}}

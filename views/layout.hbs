@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3">
+        <ul class="sidebar-nav">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/catalog/">All Items</a>
+          </li>
+           <li>
+            <a href="/catalog/categories">All Categories</a>
+          </li>
+        </ul>
+        <ul class="sidebar-nav">
+          <li>
+            <a href="/catalog/item/create">Create Item</a>
+          </li>
+          <li>
+            <a href="/catalog/category/create">Create Category</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-9">
+            {{{body}}}
+      </div>
+    </div>
+  </body>
+</html>

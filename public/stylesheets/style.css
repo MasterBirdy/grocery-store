@@ -1,0 +1,25 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+li a {
+  color: #00B7FF;
+  font-size: 1rem;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin-top: .25rem;
+}
+
+.categories {
+  padding-left: 1.5rem;
+}
+
+.card {
+  max-width: 13rem;
+}

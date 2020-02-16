@@ -1,0 +1,10 @@
+<h2>{{title}}: {{item.name}}</h2>
+<h6>Category: {{item.category.title}}</h5>
+<a href="{{item.url}}/update" class="btn btn-outline-primary" role="button">Update {{item.name}}</a>
+<a href="{{item.url}}/delete" class="btn btn-outline-danger" role="button">Delete {{item.name}}</a>
+<hr>
+<p><strong>Price: $</strong>{{item.price}}</p>
+<p><strong>Quantity: $</strong>{{item.stock}}</p>
+{{#if item.description}}
+<p>{{item.description}}</p>
+{{/if}}

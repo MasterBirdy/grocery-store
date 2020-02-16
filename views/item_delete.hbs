@@ -1,0 +1,10 @@
+<h1>{{title}}</h1>
+
+<p>Do you really wish to delete {{item.name}}?</p>
+<form action="" method="POST">
+    <div class="form-group">
+        <input type="hidden" name="itemid" id="itemid" class="form-control"
+        required="true" value="{{item._id}}">
+    </div>
+    <button class="btn btn-danger" type="submit">Submit</button>
+</form>

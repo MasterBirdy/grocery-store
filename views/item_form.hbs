@@ -1,0 +1,44 @@
+<h1>{{title}}</h1>
+<form action="" method="POST">
+    <div class="form-group">
+        <label for="nameid">Name</label>
+        <input type="text" class="form-control" id="nameid" name="nameid" aria-describedby="nameHelp"
+        minlength="3" placeholder="Enter name..." required="true" value="{{#if item}}{{item.name}}{{/if}}">
+        <small id="nameHelp" class="form-text text-muted">Names must be 3 characters or longer.</small>
+    </div>
+    <div class="form-group">
+        <label for="category">Category</label>
+        <select name="category" id="category" class="form-control">
+            {{#each categories}}
+            <option value="{{this._id}}" {{#if ../item}}{{#if_eq this._id ../item.category._id}}selected{{/if_eq}}{{/if}}>{{this.title}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" class="form-control" id="price" name="price" aria-describedby="priceHelp"
+        min="0.01" placeholder="Enter price..." step="0.01" required="true" value="{{#if item}}{{item.price}}{{/if}}">
+        <small id="priceHelp" class="form-text text-muted">Price must be greater than $0.01.</small>
+    </div>
+    <div class="form-group">
+        <label for="stock">Stock</label>
+        <input type="number" class="form-control" name="stock" id="stock" aria-describedby="stockHelp"
+        min="0" max="999" required="true" placeholder="Enter stock..." value="{{#if item}}{{item.stock}}{{/if}}">
+        <small id="stockHelp" class="form-text text-muted">Stock must be greater than 0.</small>
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" id="description" name="description" rows="3"
+        placeholder="Place description here...">
+        {{#if item}}{{#if item.description}}{{item.description}}{{/if}}{{/if}}
+        </textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{{#if errors}}
+<ul>
+    {{#each errors}}
+    <li>{{this.msg}}</li>
+    {{/each}}
+</ul>
+{{/if}}

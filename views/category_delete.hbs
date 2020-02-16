@@ -1,0 +1,19 @@
+<h1>{{title}}</h1>
+{{#if items.length}}
+<p>You need to delete these items first!</p>
+<ul>
+    {{#each items}}
+    <li><strong><a href="{{this.url}}">{{this.name}}</a></strong> - 
+    <strong>Price: </strong> {{this.price}} - <strong>Stock: </strong>{{this.stock}}</li>
+    {{/each}}
+</ul>
+{{else}}
+<p>Do you really wish to delete {{category.title}}?</p>
+<form action="" method="POST">
+    <div class="form-group">
+        <input type="hidden" name="categoryid" id="categoryid" class="form-control"
+        required="true" value="{{category._id}}">
+    </div>
+    <button class="btn btn-danger" type="submit">Submit</button>
+</form>
+{{/if}}

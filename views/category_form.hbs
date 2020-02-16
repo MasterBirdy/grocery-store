@@ -1,0 +1,17 @@
+<h1>{{title}}</h1>
+<form action="" method="POST">
+    <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" name="title" 
+            required="true" minlength="3" placeholder="Enter title..." value="{{#if category}}{{category.title}}{{/if}}">
+            <small id="titleHelp" class="form-text text-muted">Category titles must be 3 characters or longer.</small>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{{#if errors}}
+<ul>
+    {{#each errors}}
+    <li>{{this.msg}}</li>
+    {{/each}}
+</ul>
+{{/if}}

@@ -1,0 +1,42 @@
+<h1>{{title}} List</h1>
+<p>Here is a list of your following items:</p>
+{{#if category}}
+<a href="{{category.url}}/update" class="btn btn-outline-primary" role="button">Update {{title}}</a>
+<a href="{{category.url}}/delete" class="btn btn-outline-danger" role="button">Delete {{title}}</a>
+{{/if}}
+<hr>
+{{#if items}}
+{{#each items}}
+{{#if_module @index 0}}
+<div class="card-deck">
+{{/if_module}}
+<div class="card text-center border-dark mb-3">
+      <div class="card-header">{{this.category.title}}</div>
+    <div class="card-body">
+        <h5 class="card-title">{{this.name}}</h5>
+        <h6 class="card-text"><strong>${{this.price}}</strong></h6>
+        {{#if this.description}}
+        <p class="card-text">{{this.description}}</p>
+        {{/if}}
+         <a href="{{this.url}}" class="btn btn-info mb-2" style="font-size: 14px;">Item Description</a>
+        <p class="card-text"><small class="text-muted">Quantity: {{this.stock}}</small></p>
+    </div>
+</div>
+{{#if_module @index 2}}
+</div>
+{{else}}
+{{#at_end @index ../items}}
+</div>
+{{/at_end}}
+{{/if_module}}
+{{/each}}
+{{else}}
+<p>Oops! Why don't you put in some items?</p>
+{{/if}}
+{{#if errors}}
+<ul>
+    {{#each errors}}
+    <li>{{this.msg}}</li>
+    {{/each}}
+</ul>
+{{/if}}
